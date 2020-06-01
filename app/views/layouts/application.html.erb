@@ -11,9 +11,9 @@
  <%= render 'layouts/top_nav' %> 
 
 <% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+  <div class="login-bar">Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %></div>
 <% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+  <div class="login-bar"><%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %></div>
 <% end %>
 
 

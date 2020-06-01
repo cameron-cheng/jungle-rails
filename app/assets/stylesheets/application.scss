@@ -15,3 +15,16 @@ body {
 form.button_to {
   display: inline;
 }
+
+.login-bar {
+  margin-left: 20px;
+}
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-button {
+  margin-top: 20px;
+}

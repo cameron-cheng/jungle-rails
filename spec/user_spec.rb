@@ -86,20 +86,20 @@ RSpec.describe User, type: :model do
       @user = User.new({email: 'user@example.com', password: '1234', password_confirmation: '1234', name: 'abc'})
       @user.save()
     end
-    context "succesful login" do
-      it "returns true" do
+    context "user login" do
+      it "logs the user in" do
         result = User.authenticate_with_credentials("user@example.com", "1234")
         expect(result).to eq(@user)
       end
     end
-    context "spaces removed" do
-      it "returns true" do
+    context "spaces are present" do
+      it "removes spaces around the email" do
         result = User.authenticate_with_credentials(" user@example.com ", "1234")
         expect(result).to eq(@user)
       end
     end
-    context "case insensitive" do
-      it "returns true" do
+    context "mix cases" do
+      it "lowers the case of the email" do
         result = User.authenticate_with_credentials("USER@example.com", "1234")
         expect(result).to eq(@user)
       end
